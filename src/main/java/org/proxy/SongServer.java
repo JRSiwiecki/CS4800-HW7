@@ -9,7 +9,10 @@ public class SongServer implements SongService
 
     public void addSong(Song song)
     {
-        songs.add(song);
+        if (!songs.contains(song))
+        {
+            songs.add(song);
+        }
     }
 
     @Override
