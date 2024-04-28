@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class CharacterFlyweight
 {
     private final String font;
-    private final String size;
     private final String color;
+    private final String size;
 
-    private CharacterFlyweight(String font, String size, String color)
+    private CharacterFlyweight(String font, String color, String size)
     {
         this.font = font;
-        this.size = size;
         this.color = color;
+        this.size = size;
     }
 
     public String getFont()
@@ -20,14 +20,14 @@ public class CharacterFlyweight
         return font;
     }
 
-    public String getSize()
-    {
-        return size;
-    }
-
     public String getColor()
     {
         return color;
+    }
+
+    public String getSize()
+    {
+        return size;
     }
 
     @Override
@@ -35,8 +35,8 @@ public class CharacterFlyweight
     {
         CharacterFlyweight other = (CharacterFlyweight) obj;
         return (this.font.equals(other.font)
-                && this.size.equals(other.size)
-                && this.color.equals(other.color));
+                && this.color.equals(other.color)
+                && this.size.equals(other.size));
     }
 
     public static class CharacterFlyweightFactory
@@ -44,9 +44,9 @@ public class CharacterFlyweight
         private static final ArrayList<CharacterFlyweight> cache = new ArrayList<>();
 
         // Look for existing flyweight, if none exist, make it and add it to cache.
-        public static CharacterFlyweight getCharacterFlyweight(String font, String size, String color)
+        public static CharacterFlyweight getCharacterFlyweight(String font, String color, String size)
         {
-            CharacterFlyweight characterFlyweight = new CharacterFlyweight(font, size, color);
+            CharacterFlyweight characterFlyweight = new CharacterFlyweight(font, color, size);
 
             if (!cache.contains(characterFlyweight))
             {
