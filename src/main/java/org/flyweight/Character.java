@@ -5,11 +5,11 @@ public class Character
     private final char letter;
     private final CharacterFlyweight characterFlyweight;
 
-    public Character(String font, String size, String color, char letter)
+    public Character(char letter, String font, String size, String color)
     {
+        this.letter = letter;
         characterFlyweight = CharacterFlyweight.
                 CharacterFlyweightFactory.getCharacterFlyweight(font, size, color);
-        this.letter = letter;
     }
 
     public char getLetter()
