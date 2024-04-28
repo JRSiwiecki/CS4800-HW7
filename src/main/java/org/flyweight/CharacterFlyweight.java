@@ -41,10 +41,10 @@ public class CharacterFlyweight
 
     public static class CharacterFlyweightFactory
     {
-        private ArrayList<CharacterFlyweight> cache = new ArrayList<>();
+        private static final ArrayList<CharacterFlyweight> cache = new ArrayList<>();
 
         // Look for existing flyweight, if none exist, make it and add it to cache.
-        public CharacterFlyweight getCharacterFlyweight(String font, String size, String color)
+        public static CharacterFlyweight getCharacterFlyweight(String font, String size, String color)
         {
             CharacterFlyweight characterFlyweight = new CharacterFlyweight(font, size, color);
 

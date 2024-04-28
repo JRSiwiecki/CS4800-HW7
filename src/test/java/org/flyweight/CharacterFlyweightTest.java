@@ -8,13 +8,13 @@ class CharacterFlyweightTest
     @org.junit.jupiter.api.Test
     void testEquals()
     {
-        CharacterFlyweight a =
-                new CharacterFlyweight.CharacterFlyweightFactory()
-                        .getCharacterFlyweight("Arial", "Red", "12");
+        CharacterFlyweight a = CharacterFlyweight
+                .CharacterFlyweightFactory
+                .getCharacterFlyweight("Arial", "Red", "12");
 
-        CharacterFlyweight b =
-                new CharacterFlyweight.CharacterFlyweightFactory()
-                        .getCharacterFlyweight("Arial", "Red", "12");
+        CharacterFlyweight b = CharacterFlyweight
+                .CharacterFlyweightFactory
+                .getCharacterFlyweight("Arial", "Red", "12");
 
         assertEquals(a, b);
     }
@@ -22,13 +22,13 @@ class CharacterFlyweightTest
     @org.junit.jupiter.api.Test
     void testNotEquals()
     {
-        CharacterFlyweight a =
-                new CharacterFlyweight.CharacterFlyweightFactory()
-                        .getCharacterFlyweight("Arial", "Red", "12");
+        CharacterFlyweight a = CharacterFlyweight
+                .CharacterFlyweightFactory
+                .getCharacterFlyweight("Arial", "Red", "12");
 
-        CharacterFlyweight b =
-                new CharacterFlyweight.CharacterFlyweightFactory()
-                        .getCharacterFlyweight("Calibri", "Blue", "14");
+        CharacterFlyweight b = CharacterFlyweight
+                .CharacterFlyweightFactory
+                .getCharacterFlyweight("Calibri", "Blue", "14");
 
         assertNotEquals(a, b);
     }
