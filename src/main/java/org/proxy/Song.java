@@ -45,4 +45,10 @@ public class Song
         && this.album.equals(other.getAlbum())
         && this.duration == other.getDuration());
     }
+
+    @Override
+    public String toString()
+    {
+        return "[" + title + " by " + artist + " in " + album + "]";
+    }
 }
