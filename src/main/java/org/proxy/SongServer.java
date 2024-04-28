@@ -15,12 +15,16 @@ public class SongServer implements SongService
     @Override
     public Song searchById(Integer songID)
     {
+        addArtificialDelay();
+
         return songs.get(songID);
     }
 
     @Override
     public List<Song> searchByTitle(String title)
     {
+        addArtificialDelay();
+
         ArrayList<Song> matchingSongs = new ArrayList<>();
 
         for (Song song : songs)
@@ -37,6 +41,8 @@ public class SongServer implements SongService
     @Override
     public List<Song> searchByAlbum(String album)
     {
+        addArtificialDelay();
+
         ArrayList<Song> matchingSongs = new ArrayList<>();
 
         for (Song song : songs)
@@ -48,5 +54,12 @@ public class SongServer implements SongService
         }
 
         return matchingSongs;
+    }
+
+    public void addArtificialDelay()
+    {
+        try {
+            Thread.sleep(1000);
+        } catch (Exception ignored) { }
     }
 }
